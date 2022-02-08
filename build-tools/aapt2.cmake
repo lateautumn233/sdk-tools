@@ -1,6 +1,6 @@
 set(AAPT2_PROTO_SRC)  # proto source files
 set(AAPT2_PROTO_HDRS) # proto head files
-set(AAPT2_PROTO_DIR ${CMAKE_SOURCE_DIR}/src/base/tools/aapt2)
+set(AAPT2_PROTO_DIR ${SRC}/base/tools/aapt2)
 
 file(GLOB_RECURSE PROTO_FILES ${AAPT2_PROTO_DIR}/*.proto)
 

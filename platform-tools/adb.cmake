@@ -1,6 +1,6 @@
 set(ADB_PROTO_SRC)  # adb proto source files
 set(ADB_PROTO_HDRS) # adb proto head files
-set(ADB_PROTO_DIR ${CMAKE_SOURCE_DIR}/src/adb/proto)
+set(ADB_PROTO_DIR ${SRC}/adb/proto)
 
 file(GLOB_RECURSE PROTO_FILES ${ADB_PROTO_DIR}/*.proto)
 

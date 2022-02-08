@@ -24,6 +24,18 @@ flex_target(
 # add dependency
 add_flex_bison_dependency(LangScanner LangParser)
 
+message(STATUS ${FLEX_LangScanner_OUTPUTS})          
+message(STATUS ${BISON_LangParser_OUTPUTS})
+
+set(GEN_PARSER_HEAD_FILE ${SRC}/aidl/aidl_language_y.h)
+add_custom_target(patch
+    COMMAND echo 'typedef union yy::parser::value_type YYSTYPE\;' >> ${GEN_PARSER_HEAD_FILE}
+    COMMAND echo 'typedef yy::parser::location_type YYLTYPE\;' >> ${GEN_PARSER_HEAD_FILE}
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    DEPENDS ${FLEX_LangScanner_OUTPUTS} ${BISON_LangParser_OUTPUTS}
+    COMMENT "to patch for ${GEN_PARSER_HEAD_FILE}"
+    )
+    
 add_executable(aidl
     ${SRC}/aidl/aidl_checkapi.cpp
     ${SRC}/aidl/aidl_const_expressions.cpp
@@ -57,7 +69,7 @@ add_executable(aidl
     ${SRC}/aidl/parser.cpp
     ${SRC}/aidl/preprocess.cpp
     ${SRC}/aidl/main.cpp
-    #${BISON_LangParser_OUTPUTS}
+    ${BISON_LangParser_OUTPUTS}
     ${FLEX_LangScanner_OUTPUTS}
     )
     
@@ -73,5 +85,4 @@ target_link_libraries(aidl
     boringssl_gtest
     fmt::fmt
     c++_static
-    dl
     )
