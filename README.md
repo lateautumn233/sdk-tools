@@ -11,7 +11,7 @@ For other architectures you may need to refer to `Android.bp` to modify the corr
 
 ```bash
 # clone repository
-git clone --depth=1 https://github.com/Lzhiyong/sdk-tools
+git clone --depth=1 https://github.com/Lzhiyong/sdk-tools -b branch_name
 
 git submodule update --depth=1 --init --recursive
 
