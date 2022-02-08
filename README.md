@@ -10,6 +10,11 @@ For other architectures you may need to refer to `Android.bp` to modify the corr
 ### How to build
 
 ```bash
+# clone repository
+git clone --depth=1 https://github.com/Lzhiyong/sdk-tools
+
+git submodule update --depth=1 --init --recursive
+
 cd /path/to/sdk-tools 
 
 mkdir build && cd build
