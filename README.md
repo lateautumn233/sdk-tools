@@ -11,7 +11,7 @@ For other architectures you may need to refer to `Android.bp` to modify the corr
 
 ```bash
 # clone repository
-git clone --depth=1 https://github.com/Lzhiyong/sdk-tools -b branch_name
+git clone --depth=1 https://github.com/Lzhiyong/sdk-tools
 
 git submodule update --depth=1 --init --recursive
 
@@ -19,7 +19,7 @@ cd /path/to/sdk-tools
 
 mkdir build && cd build
 
-# settings the ndk toolchain
+# set up the ndk toolchain
 NDK_TOOLCHAIN=/path/to/android-ndk-r23/toolchains/llvm/prebuilt/linux-x86_64
 
 cmake -G 'Ninja' \
@@ -28,6 +28,9 @@ cmake -G 'Ninja' \
     -DCMAKE_SYSROOT=$NDK_TOOLCHAIN/sysroot \
     -DCMAKE_BUILD_TYPE=Release \
     ..
+
+# patch 
+ninja patch
 
 ninja -j16
 
