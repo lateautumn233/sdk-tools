@@ -134,3 +134,7 @@
     shallow = true
     path = src/abseil-cpp
     url = https://android.googlesource.com/platform/external/abseil-cpp
+[submodule "src/libziparchive"]
+	path = src/libziparchive
+	url = https://android.googlesource.com/platform/system/libziparchive
+	branch = android12-release
