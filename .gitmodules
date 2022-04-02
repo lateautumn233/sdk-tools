@@ -34,10 +34,6 @@
     shallow = true
     path = src/libbase
     url = https://android.googlesource.com/platform/system/libbase
-[submodule "src/libziparchive"]
-    shallow = true
-    path = src/libziparchive
-    url = https://android.googlesource.com/platform/system/libziparchive
 [submodule "src/base"]
     shallow = true
     path = src/base
